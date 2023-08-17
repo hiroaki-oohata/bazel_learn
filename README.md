@@ -44,16 +44,17 @@ https://www.kkaneko.jp/tools/win/buildtool2022.html
 
 ## 動作確認
 ### ビルドするコードを用意する
-自作しても良いし、面倒であれば（gitがインストールされている環境であれば）以下から取得しても良い。  
+自作しても良いし、面倒であれば（gitがインストールされている環境であれば）以下から取得しても良い。
+gitがなければ、Code - download ZIP でDLしても良い。  
 
 *bazelが提供するオフィシャルなチュートリアル*  
 `git clone https://github.com/bazelbuild/examples`  
-（参考）https://bazel.build/start/cpp?hl=ja
+（参考）https://bazel.build/start/cpp?hl=ja  
 
 *本プロジェクト*  
 `git clone https://github.com/hiroaki-oohata/bazel_learn`  
 （出力例）  
-<img src="./image/git_clone_result.png" width="40%">
+<img src="./image/git_clone_result.png" width="50%">
 
 ### ビルドする
 本プロジェクトを使用することを前提に話を進める。  
