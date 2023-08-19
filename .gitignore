@@ -1,0 +1,8 @@
+# bazelがビルド時に生成するフォルダは対象外
+bazel-bin\
+bazel-helloworld\
+bazel-out\
+bazel-testlogs\
+
+# vscodeの管理用フォルダ
+.vscode\
