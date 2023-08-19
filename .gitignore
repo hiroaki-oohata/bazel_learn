@@ -1,8 +1,16 @@
-# bazelがビルド時に生成するフォルダは対象外
-bazel-bin\
-bazel-helloworld\
-bazel-out\
-bazel-testlogs\
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
-# vscodeの管理用フォルダ
-.vscode\
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+# bazelがビルド時に生成するフォルダ
+bazel-*/
