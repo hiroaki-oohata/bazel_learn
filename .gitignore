@@ -1,4 +1,7 @@
 # Visual Studio Code
+helloworld/main/.vscode/*
+
+# Ç±ÇÍÇæÇ∆Ç»Ç∫É_ÉÅÅH
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
