@@ -1,0 +1,16 @@
+{
+    "name": "Bazel Development Environment",
+    "dockerFile": "Dockerfile",
+    "context": ".",
+    "extensions": [
+        "ms-vscode.cpptools",
+        "bazelbuild.vscode-bazel"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached"
+    ],
+    "workspaceFolder": "/workspaces"
+}
