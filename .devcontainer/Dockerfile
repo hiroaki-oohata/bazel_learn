@@ -21,8 +21,13 @@ RUN curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+    # Buildifierのインストール
+RUN curl -LO https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-linux-amd64 \
+&& chmod +x buildifier-linux-amd64 \
+&& mv buildifier-linux-amd64 /usr/local/bin/buildifier
+
 # ワークディレクトリの設定
-WORKDIR /workspaces
+WORKDIR /workspace
 
 # デフォルトのシェルをbashに設定
 CMD [ "bash" ]

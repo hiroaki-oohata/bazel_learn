@@ -2,15 +2,20 @@
     "name": "Bazel Development Environment",
     "dockerFile": "Dockerfile",
     "context": ".",
-    "extensions": [
-        "ms-vscode.cpptools",
-        "bazelbuild.vscode-bazel"
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:0-focal",
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
     ],
     "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+      "terminal.integrated.shell.linux": "/bin/bash"
     },
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached"
+    "extensions": [
+      "ms-vscode.cpptools",
+      "ms-azuretools.vscode-docker",
+      "bazelbuild.vscode-bazel"
     ],
-    "workspaceFolder": "/workspaces"
-}
+    "postCreateCommand": "echo 'Container is ready!'",
+    "postStartCommand": "echo 'Container has started!'"
+  }
+  
