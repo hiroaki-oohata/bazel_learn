@@ -45,7 +45,7 @@ https://www.kkaneko.jp/tools/win/buildtool2022.html
 （devcontainerの詳細については説明しない）  
 
 
-## 動作確認（devcontainerで導入した場合を例に記述）
+## 動作確認
 ### ビルドするコードを用意する
 自作しても良いし、面倒であれば（gitがインストールされている環境であれば）以下から取得しても良い。  
 gitがなければ、Code - download ZIP でDLしても良い。  
