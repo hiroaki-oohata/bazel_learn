@@ -16,7 +16,7 @@ bazelの特徴
 4. 並列ビルドにより時間短縮が期待できる  
 5. パッケージ化、Dockerイメージ作成ができる（細かいことはできない）
 
-## Windowsに導入
+## １）Windowsに導入する場合（非推奨）
 ### Bazelのインストール
 https://qiita.com/ma-szk/items/05bfc4d0c731071fdeec  
 （bazel.exeにリネームして使用するのがミソ）  
@@ -39,12 +39,15 @@ https://www.kkaneko.jp/tools/win/buildtool2022.html
 ※サブフォルダも対象から外れるので、できるだけ親フォルダを設定するとよい。  
 <img src="./image/TrendMicro_setting2.png" width="50%">
 
-## Ubuntu(WSL2環境)に導入
-（用意するか検討中・・・）
+## ２）devcontainerで導入する場合（推奨）
+本プロジェクトに登録している[.devcontainer](.devcontainer)を使用することでcontainer内でbazelを導入することができる。  
+使用方法は[動作確認](#動作確認)にて説明する。  
+（devcontainerの詳細については説明しない）  
 
-## 動作確認
+
+## 動作確認（devcontainerで導入した場合を例に記述）
 ### ビルドするコードを用意する
-自作しても良いし、面倒であれば（gitがインストールされている環境であれば）以下から取得しても良い。
+自作しても良いし、面倒であれば（gitがインストールされている環境であれば）以下から取得しても良い。  
 gitがなければ、Code - download ZIP でDLしても良い。  
 
 *bazelが提供するオフィシャルなチュートリアル*  
@@ -54,19 +57,49 @@ gitがなければ、Code - download ZIP でDLしても良い。
 *本プロジェクト*  
 `git clone https://github.com/hiroaki-oohata/bazel_learn`  
 （出力例）  
-<img src="./image/git_clone_result.png" width="50%">
+<img src="./image/git_clone_result.png" width="50%">  
+
+### devcontainerでbazelを導入する場合にはdevcontainerを起動する
+本プロジェクトを使用することを前提に話を進める。  
+1. プロジェクトを開く
+containerで開くことを進めてくる。  
+<img src="./image/container_open.png" width="50%">  
+
+2. containerをビルドする
+自動的にビルドが開始する。  
+下記の出力が出れば成功。  
+<img src="./image/container_opem_success.png" width="50%">  
+
+3. containerをビルド成功を確認する
+成功すればbazelがインストールされた環境ができたことになる。  
+下記の例だと root ユーザーで workspace フォルダを開いた状態になっている。  
+（containerで開く前と違うハズ）  
+<img src="./image/container_in.png" width="35%">  
+
+4. 確認
+念のため`bazel version`と打ってみましょう。  
+container内にだけインストールされたことがわかります。  
+　・ホストPC(WSL2)： 見つからないというエラーが出る  
+　・container内： versionが出力される  
 
 ### ビルドする
 本プロジェクトを使用することを前提に話を進める。  
 1. コマンドプロンプトでビルドする  
-※あらかじめ、WORKSPACEがあるディレクトリまで移動しておく必要あり。  
-`bazel build //main:helloworld`  
+※WORKSPACEがあるディレクトリで実行する。  
+`bazel build //helloworld/main:helloworld`  
+<img src="./image/bazel_build_result.png" width="50%">
+
 2. コマンドプロンプトから実行する  
-`bazel run //main:helloworld`  
+`bazel run //helloworld/main:helloworld`  
+
 3. 出力があることを確認する  
 `Hello World!`  
 （出力例）  
-<img src="./image/bazel_run_result.png" width="50%">
+<img src="./image/bazel_run_result.png" width="50%">  
+
+4. ビルドしたバイナリオブジェクトはプロジェクト直下に出力される  
+<img src="./image/bazel-out.png" width="35%">  
+
 
 ## 補足
 ### gitからcloneする準備

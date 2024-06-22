@@ -16,5 +16,5 @@ helloworld/main/.vscode/*
 *.vsix
 
 # bazelがビルド時に生成するフォルダ
-bazel-*/
+bazel-*
 MODULE.bazel*
