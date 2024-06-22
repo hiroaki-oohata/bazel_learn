@@ -98,7 +98,7 @@ container内にだけインストールされたことがわかります。
 <img src="./image/bazel_run_result.png" width="50%">  
 
 4. ビルドしたバイナリオブジェクトはプロジェクト直下に出力される  
-<img src="./image/bazel-out.png" width="35%">  
+<img src="./image/bazel_out.png" width="35%">  
 
 
 ## 補足
