@@ -82,6 +82,20 @@ container内にだけインストールされたことがわかります。
 　・ホストPC(WSL2)： 見つからないというエラーが出る  
 　・container内： versionが出力される  
 
+5. トラブルシューティング  
+もしエラーが出る場合は以下のコマンドを試してみる  
+    ```
+    docker system prune -a
+    ```  
+
+    ```
+    sudo update-alternatives --config iptables
+    (選択肢：1)
+    sudo service docker start
+    sudo service docker status
+    ```
+
+
 ### ビルドする
 本プロジェクトを使用することを前提に話を進める。  
 1. コマンドプロンプトでビルドする  
